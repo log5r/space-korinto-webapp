@@ -184,6 +184,16 @@ function drawBumpers() {
     ctx.save();
     if (lit) { ctx.shadowColor = GOLD; ctx.shadowBlur = 30 * p.flash; }
     ctx.fillStyle = 'rgba(0,0,0,.5)'; ctx.beginPath(); ctx.arc(x + 3, y + 5, r, 0, Math.PI * 2); ctx.fill();
+    // the ring is split in two: the far half is drawn first so the planet hides it, the near half is drawn on top
+    const ringArc = (from, to) => {
+      ctx.strokeStyle = lit ? '#fff' : p.ring; ctx.shadowColor = p.ring; ctx.shadowBlur = 8 + 14 * p.flash;
+      ctx.lineWidth = 3.5; ctx.beginPath(); ctx.ellipse(x, y, r * 1.55, r * 0.42, -0.25, from, to); ctx.stroke();
+      ctx.shadowBlur = 0; ctx.globalAlpha = 0.35; ctx.lineWidth = 7;
+      ctx.beginPath(); ctx.ellipse(x, y, r * 1.55, r * 0.42, -0.25, from, to); ctx.stroke();
+      ctx.globalAlpha = 1;
+    };
+    ringArc(Math.PI, Math.PI * 2);
+    if (lit) { ctx.shadowColor = GOLD; ctx.shadowBlur = 30 * p.flash; }
     const g = ctx.createRadialGradient(x - r * 0.4, y - r * 0.4, r * 0.1, x, y, r);
     g.addColorStop(0, lit ? '#fff' : p.base); g.addColorStop(0.6, p.base); g.addColorStop(1, p.dark);
     ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill();
@@ -191,10 +201,12 @@ function drawBumpers() {
     ctx.save(); ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.clip();
     ctx.strokeStyle = 'rgba(255,255,255,.18)'; ctx.lineWidth = 3;
     for (let i = -2; i <= 2; i++) { ctx.beginPath(); ctx.ellipse(x, y + i * r * 0.32, r * 1.1, r * 0.16, 0, 0, Math.PI * 2); ctx.stroke(); }
+    // soft shadow the near half of the ring casts onto the globe
+    ctx.strokeStyle = 'rgba(0,0,0,.28)'; ctx.lineWidth = 6;
+    ctx.beginPath(); ctx.ellipse(x, y + 2, r * 1.55, r * 0.42, -0.25, 0, Math.PI); ctx.stroke();
     ctx.restore();
-    ctx.strokeStyle = lit ? '#fff' : p.ring; ctx.lineWidth = 3.5; ctx.shadowColor = p.ring; ctx.shadowBlur = 8 + 14 * p.flash;
-    ctx.beginPath(); ctx.ellipse(x, y, r * 1.55, r * 0.42, -0.25, 0, Math.PI * 2); ctx.stroke();
-    ctx.shadowBlur = 0; ctx.fillStyle = '#fff'; ctx.font = '800 10px "JetBrains Mono", "Menlo", "SF Mono", Consolas, monospace';
+    ringArc(0, Math.PI);
+    ctx.fillStyle = '#fff'; ctx.font = '800 10px "JetBrains Mono", "Menlo", "SF Mono", Consolas, monospace';
     ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('100', x, y + 1);
     ctx.restore();
   }
