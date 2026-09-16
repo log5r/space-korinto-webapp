@@ -241,13 +241,13 @@ function drawHoles() {
   }
 }
 // Recessed instrument screen: decorative only; the gate and balls pass in front.
-function drawGateDisplay(g) {
+function drawGateDisplay(g, cosmic = null) {
   const x = 216, y = 410, w = 168, h = 44;
   const t = window.SpaceKorinto.i18n.t;
   const remaining = Math.max(0, 10 - g.clock % 10);
   const side = g.warning ? -g.side : g.side;
   const grace = state.modeId === 'timed' && window.SpaceKorinto.timedGateGrace(g.clock);
-  const color = g.warning ? '#ffc568' : '#70eeff';
+  const color = cosmic ? cosmic.color : g.warning ? '#ffc568' : '#70eeff';
   ctx.save();
   // Dark inset seam and a brushed-metal bevel match the score display housing.
   ctx.fillStyle = '#02050a'; roundRect(ctx, x - 2, y - 2, w + 4, h + 4, 6); ctx.fill();
@@ -264,21 +264,64 @@ function drawGateDisplay(g) {
   ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
   ctx.fillStyle = color; ctx.shadowColor = color; ctx.shadowBlur = 4;
   ctx.font = '700 15px "Chakra Petch", "Menlo", sans-serif';
-  ctx.fillText((grace ? '◀ BOTH ▶' : t(side < 0 ? 'gateLeft' : 'gateRight')) + (state.modeId === 'timed' ? ' ×2' : ''), x + w / 2, y + 14);
+  ctx.fillText(cosmic ? cosmic.title : (grace ? '◀ BOTH ▶' : t(side < 0 ? 'gateLeft' : 'gateRight')) + (state.modeId === 'timed' ? ' ×2' : ''), x + w / 2, y + 14);
   ctx.shadowBlur = 0; ctx.font = '10px sans-serif';
   ctx.fillStyle = g.warning ? '#ffdb9e' : '#a2c6d2';
-  ctx.fillText(grace ? t('gateGrace') : g.warning ? t('gateCountdown', { seconds: Math.ceil(remaining) })
+  ctx.fillText(cosmic ? cosmic.subtitle : grace ? t('gateGrace') : g.warning ? t('gateCountdown', { seconds: Math.ceil(remaining) })
     : t(state.modeId === 'timed' ? (side < 0 ? 'gateTimedLow' : 'gateTimedHigh') : (side < 0 ? 'gateLowPower' : 'gateHighPower')), x + w / 2, y + 28);
   ctx.fillStyle = '#1e303c'; ctx.fillRect(x + 16, y + h - 9, w - 32, 2);
-  ctx.fillStyle = color; ctx.fillRect(x + 16, y + h - 9, (w - 32) * remaining / 10, 2);
+  ctx.fillStyle = color; ctx.fillRect(x + 16, y + h - 9, (w - 32) * (cosmic ? cosmic.progress : remaining / 10), 2);
   // A restrained glass reflection keeps the text legible without a flashing effect.
   const glass = ctx.createLinearGradient(0, y + 4, 0, y + 23);
   glass.addColorStop(0, 'rgba(220,244,255,.09)'); glass.addColorStop(1, 'rgba(220,244,255,0)');
   ctx.fillStyle = glass; ctx.fillRect(x + 11, y + 5, w - 22, 18);
   ctx.restore();
 }
+function drawCosmicDisplay() {
+  const v = state.vortex, stage = v ? v.stage : 'calm', t = window.SpaceKorinto.i18n.t;
+  const titles = { calm: 'AURORA DRIFT', warning: 'VORTEX INBOUND', active: 'GRAVITY VORTEX', release: 'ORBIT RELEASE' };
+  const lengths = { calm: 18, warning: 4, active: 8, release: 2 };
+  drawGateDisplay(board.gate, { title: titles[stage],
+    subtitle: t('vortex' + stage, { seconds: Math.ceil(v ? v.remaining : 18) }),
+    color: stage === 'warning' ? '#ffc568' : stage === 'active' ? '#df9fff' : '#70eeff',
+    progress: v ? v.remaining / lengths[stage] : 1 });
+}
+function drawAurora() {
+  if (!state.auroraFx || state.modeId !== 'infinite') return;
+  ctx.save(); ctx.globalCompositeOperation = 'lighter'; ctx.lineCap = 'round';
+  // A barely visible, ball-width glow with no bright central filament.
+  for (const p of state.aurora) {
+    const fade = (p.life / 1.25) ** 2;
+    ctx.strokeStyle = `hsla(${p.hue},95%,65%,${fade * 0.025})`;
+    ctx.lineWidth = R * 2; ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p.ex, p.ey); ctx.stroke();
+  }
+  ctx.restore();
+}
+function drawVortex() {
+  const v = state.vortex;
+  if (state.modeId !== 'infinite' || !v || v.stage === 'calm') return;
+  ctx.save(); ctx.translate(v.x, v.y); ctx.globalCompositeOperation = 'lighter';
+  const strength = v.stage === 'warning' ? 0.15 * (1 - v.remaining / 4) : v.strength;
+  const halo = ctx.createRadialGradient(0, 0, 8, 0, 0, v.radius);
+  halo.addColorStop(0, `rgba(122,100,255,${strength * 0.23})`);
+  halo.addColorStop(0.55, `rgba(60,170,240,${strength * 0.12})`);
+  halo.addColorStop(1, 'rgba(40,100,200,0)');
+  ctx.fillStyle = halo; ctx.beginPath(); ctx.arc(0, 0, v.radius, 0, Math.PI * 2); ctx.fill();
+  for (let arm = 0; arm < 5; arm++) {
+    ctx.beginPath();
+    for (let i = 0; i <= 64; i++) {
+      const u = i / 64, r = 12 + u * (v.radius - 12);
+      const a = arm * Math.PI * 2 / 5 + v.direction * (u * 5 - v.clock * 1.8);
+      ctx[i ? 'lineTo' : 'moveTo'](Math.cos(a) * r, Math.sin(a) * r * 0.72);
+    }
+    ctx.strokeStyle = `hsla(${185 + arm * 22},95%,75%,${strength * 0.42})`;
+    ctx.lineWidth = 2; ctx.stroke();
+  }
+  ctx.restore();
+}
 function drawGate() {
   if (state.modeId === 'infinite') {
+    drawCosmicDisplay();
     for (const n of board.pins) if (n.gateZone) ctx.drawImage(pinSprite.cv, n.x - pinSprite.ox, n.y - pinSprite.oy);
     return;
   }
@@ -554,6 +597,8 @@ function render() {
   drawImpactGlow();
   // play area clip for everything on the board
   ctx.save(); fieldPath(ctx); ctx.clip();
+  drawVortex();
+  drawAurora();
   drawPinFlashes();
   drawLanes();
   drawHoles();

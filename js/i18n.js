@@ -3,6 +3,10 @@ window.SpaceKorinto.i18n = (() => {
 'use strict';
 const messages = {
   "ja": {
+    "vortexcalm": "光の軌跡を眺めてみよう",
+    "vortexwarning": "重力の渦まで {seconds}秒",
+    "vortexactive": "重力の渦が発生中 · {seconds}秒",
+    "vortexrelease": "重力がゆっくり戻ります",
     "gateGrace": "切り替え猶予 · 両側の得点2倍",
     "gateLeft": "◀ LEFT",
     "gateRight": "RIGHT ▶",
@@ -30,6 +34,7 @@ const messages = {
     "finish": "スコアを確定して終了",
     "quit": "やめる",
     "flash": "フラッシュエフェクト（入賞時の画面の光）",
+    "aurora": "ボールの光の軌跡（無限モード）",
     "volume": "音量",
     "finishNote": "「スコアを確定して終了」は今のスコアで結果画面へ（ベスト更新あり）。「やめる」はスコアを残さずタイトルに戻ります。",
     "pauseAction": "ポーズ (P)",
@@ -41,6 +46,10 @@ const messages = {
     "limitNote": "スコアがプログラムで扱える上限 ({max}) に達しました。{seconds} 秒後にタイトルへ戻ります。"
   },
   "en": {
+    "vortexcalm": "FOLLOW THE LIGHT",
+    "vortexwarning": "VORTEX IN {seconds}s",
+    "vortexactive": "ORBITING · {seconds}s",
+    "vortexrelease": "RETURNING TO NORMAL",
     "gateGrace": "GRACE · BOTH SIDES DOUBLE",
     "gateLeft": "◀ LEFT",
     "gateRight": "RIGHT ▶",
@@ -68,6 +77,7 @@ const messages = {
     "finish": "Finish & save score",
     "quit": "Quit",
     "flash": "Flash effects (screen flashes when a ball scores)",
+    "aurora": "Glowing ball trails (Infinite mode)",
     "volume": "Volume",
     "finishNote": "“Finish & save score” opens the results and updates your best score. “Quit” returns to the title without saving this run.",
     "pauseAction": "Pause (P)",

@@ -34,11 +34,12 @@ const state = {
   paidBalls: 0, shots: 0, hits: 0, outs: 0, hitsByType: {}, kicks: 0,
   multiplier: 1, laneSets: 0,
   handle: 0.55, launchT: 0,
-  balls: [], particles: [], popups: [],
+  balls: [], particles: [], popups: [], aurora: [], vortex: null,
   banner: null, keys: {},
   impact: 0, glow: 0, hitColor: null,   // impact = pulse added per hole entry; glow eases after it (LED flare + soft flash)
   returnAt: 0,             // SCORE LIMIT screen: time (performance.now) at which it returns to the title
   flashFx: localStorage.getItem('korinto_flash') !== '0',
+  auroraFx: localStorage.getItem('korinto_aurora') !== '0',
   demoT: 0,                // attract mode: the handle wanders on its own before a game starts
 };
 state.best = loadBest(state.modeId);
@@ -53,7 +54,7 @@ function startGame() {
   initAudio();
   Object.assign(state, { mode: 'playing', endReason: null, best: loadBest(state.modeId), score: 0, time: TIME_LIMIT, timeAlive: 0,
                          stock: START_BALLS, paidBalls: 0, shots: 0, hits: 0, outs: 0, hitsByType: {}, kicks: 0, multiplier: 1, laneSets: 0, launchT: LAUNCH_INTERVAL,
-                         balls: [], particles: [], popups: [], banner: null, impact: 0, glow: 0, paused: false });
+                         balls: [], particles: [], popups: [], aurora: [], vortex: null, banner: null, impact: 0, glow: 0, paused: false });
   sound.setGameplayEnabled(true);
   Object.assign(board.gate, { angle: -0.42, omega: 0, clock: 0, side: -1, warning: false });
   for (const l of board.lanes) l.lit = false;
@@ -120,6 +121,7 @@ function quitGame() {
   showTitle();
 }
 function selectMode(id, persist = true) {
+  state.aurora = []; state.vortex = null;
   state.modeId = id; state.best = loadBest(id);
   configureBoard();
   if (persist) localStorage.setItem('korinto_mode', id);
@@ -186,6 +188,17 @@ function setFlashFx(on) {
 }
 for (const el of flashToggles) el.addEventListener('change', e => { setFlashFx(e.target.checked); e.target.blur(); });
 setFlashFx(state.flashFx);
+const auroraToggles = [...document.querySelectorAll('.auroraToggle')];
+function setAuroraFx(on) {
+  state.auroraFx = on;
+  localStorage.setItem('korinto_aurora', on ? '1' : '0');
+  for (const el of auroraToggles) el.checked = on;
+  // Clear immediately, including while paused; enabling starts fresh trails.
+  state.aurora = [];
+  for (const b of state.balls) delete b.auroraPrevious;
+}
+for (const el of auroraToggles) el.addEventListener('change', e => { setAuroraFx(e.target.checked); e.target.blur(); });
+setAuroraFx(state.auroraFx);
 // volume slider: same arrangement as the flash toggle (title + pause screen, synced, remembered). Releasing the slider plays a
 // chrome ping so the new level can be judged without leaving the menu
 const volumeSliders = [...document.querySelectorAll('.volumeSlider')], volumeValues = [...document.querySelectorAll('.volumeValue')];
@@ -337,6 +350,7 @@ function confine(b, dt) {
 function stepBall(b, dt) {
   b.previousX = b.x; b.previousY = b.y;
   b.vy += GRAVITY * dt;
+  applyVortex(b, dt);
   b.x += b.vx * dt; b.y += b.vy * dt;
   confine(b, dt);
   // walls, lane dividers, slingshots, flipper guides
@@ -358,6 +372,7 @@ function stepBall(b, dt) {
     if (!hit || p.cool > 0) continue;
     b.vx = hit.nx * BUMPER_KICK + b.vx * 0.2; b.vy = hit.ny * BUMPER_KICK + b.vy * 0.2;
     p.flash = 1; p.cool = 0.08;
+    if (state.modeId === 'infinite') b.hue = ((b.hue ?? 180) + 65) % 360;
     scored(BUMPER_POINTS, p.x, p.y - p.r - 12, p.ring, 13);
     sfx('bumper');
   }
@@ -438,6 +453,47 @@ function updateGate(dt) {
   g.omega = dt > 0 ? (g.angle - old) / dt : 0;
 }
 
+// A quiet interval, four-second forecast, eight-second orbit and gentle release.
+// All timing uses simulation time so pausing freezes both the forecast and the field.
+function updateVortex() {
+  if (state.modeId !== 'infinite' || state.mode !== 'playing') { state.vortex = null; return; }
+  const clock = state.timeAlive, phase = clock % 32, cycle = Math.floor(clock / 32);
+  const stage = phase < 18 ? 'calm' : phase < 22 ? 'warning' : phase < 30 ? 'active' : 'release';
+  const age = phase - (stage === 'active' ? 22 : stage === 'release' ? 30 : 18);
+  state.vortex = { stage, clock, x: CX + (cycle % 3 - 1) * 38, y: 492,
+    direction: cycle % 2 ? -1 : 1, radius: 155,
+    strength: stage === 'active' ? Math.min(1, age / 1.5) : stage === 'release' ? Math.max(0, 1 - age / 2) : 0,
+    remaining: (stage === 'calm' ? 18 : stage === 'warning' ? 22 : stage === 'active' ? 30 : 32) - phase };
+}
+function applyVortex(b, dt) {
+  const v = state.vortex;
+  if (!v || !v.strength || state.modeId !== 'infinite' || state.mode !== 'playing' || b.x < FIELD_L + R) return;
+  const dx = v.x - b.x, dy = v.y - b.y, distance = Math.hypot(dx, dy);
+  if (distance < 1 || distance >= v.radius) return;
+  const nx = dx / distance, ny = dy / distance;
+  const force = v.strength * (1 - distance / v.radius);
+  // Cancel some downward pull and drive a circulating flow; no singularity at the centre.
+  const radial = v.stage === 'release' ? -1800 : 1900;
+  b.vx += (nx * radial - ny * 2600 * v.direction) * force * dt;
+  b.vy += (ny * radial + nx * 2600 * v.direction - GRAVITY) * force * dt;
+}
+function updateAurora(dt) {
+  for (const p of state.aurora) p.life -= dt;
+  state.aurora = state.aurora.filter(p => p.life > 0);
+  if (!state.auroraFx || state.modeId !== 'infinite' || state.mode !== 'playing') { state.aurora = []; return; }
+  for (const b of state.balls) {
+    const prev = b.auroraPrevious;
+    if (prev && Math.hypot(b.x - prev.x, b.y - prev.y) > 0.5) {
+      const hue = b.hue ?? (180 + state.shots * 37) % 360;
+      b.hue = hue;
+      state.aurora.push({ x: prev.x, y: prev.y, ex: b.x, ey: b.y, hue, life: 1.25 });
+    }
+    b.auroraPrevious = { x: b.x, y: b.y };
+  }
+  // Bound cost even with the maximum number of balls and high-refresh displays.
+  if (state.aurora.length > 1600) state.aurora.splice(0, state.aurora.length - 1600);
+}
+
 function updateFeatures(dt) {
   for (const p of board.bumpers) { p.flash = Math.max(0, p.flash - dt * 3); p.cool = Math.max(0, p.cool - dt); }
   for (const s of board.slings) { s.flash = Math.max(0, s.flash - dt * 3); s.cool = Math.max(0, s.cool - dt); }
@@ -468,6 +524,7 @@ function update(dt) {
   if (canFire && state.launchT >= LAUNCH_INTERVAL) { state.launchT = 0; launch(); }
   else if (!canFire) state.launchT = Math.min(state.launchT, LAUNCH_INTERVAL);
 
+  updateVortex();
   updateFeatures(dt);
   // flippers step at the same rate as the balls so a fast swing meets the ball where it really is
   const steps = Math.max(1, Math.ceil(dt / (1 / 240)));
@@ -495,6 +552,7 @@ function update(dt) {
     if (ballSpeed(b) < 25) { b.still += dt; if (b.still > 0.8) { b.vx = (b.x < CX ? 1 : -1) * rand(80, 160); b.vy = -200; b.still = 0; state.kicks++; } } else b.still = 0;
     if (b.age > 60) { b.dead = true; state.outs++; }   // safety net
   }
+  updateAurora(dt);
   ballBallCollisions();
   for (const b of state.balls) confine(b, 0);
   state.balls = state.balls.filter(b => !b.dead);

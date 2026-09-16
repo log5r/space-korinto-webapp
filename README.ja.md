@@ -29,6 +29,8 @@ HTML / CSS / JavaScript (Canvas 2D + Web Audio API) のみで書かれており�
 - ベストスコアはモードごとにブラウザの `localStorage` に保存されます（前回選んだモードも記憶されます）。
 - スコアの上限は `Number.MAX_SAFE_INTEGER`（9,007,199,254,740,991）です。到達した場合はそこで得点が止まり、「SCORE LIMIT」画面のあとタイトルに戻ります。
 
+- **無限モードの宇宙演出**: 玉は約1.25秒で消える色付きの光の軌跡を残し、惑星バンパーに当たると色が変わります。32秒周期で重力の渦が発生し、中央ディスプレイが4秒前から予告します。8秒間、近くの玉を引き寄せて旋回させ、2秒かけて解放します。渦の位置と回転方向は周期ごとに変わり、ポーズ中は演出も停止します。光の軌跡はメインメニューとポーズメニューの「ボールの光の軌跡」でオン／オフを切り替えられ、設定は保存されます。
+
 - **ノーマル・タイムアタック：振り分けゲート**が中段で10秒ごとに左右へ傾き、玉の流れを変えます。切り替え2秒前に予告し、1.5秒かけて傾きます。盤面の表示に合わせ、左は弱め・右は強めに打ち分けてください。ゲートの可動域のピンは両モードで取り除かれます。ノーマルは点灯側が通常配当、反対側は得点半分・賞球なしです。タイムアタックは点灯側の左右ワームホールの得点2倍、反対側は通常得点（上部レーンの倍率も掛かります）。切り替え直後の1秒は両側2倍です。中央ブラックホールは常に通常配当です。
 
 ### 操作
@@ -58,7 +60,7 @@ http://localhost:8765/ を開いてください。
 ルールと物理は Node でヘッドレスに検証できます（依存なし）:
 
 ```bash
-for t in tests/i18n.cjs tests/modes.cjs tests/board.cjs tests/score-limit.cjs tests/gate.cjs tests/timed-lanes.cjs; do node "$t" || break; done
+for t in tests/i18n.cjs tests/modes.cjs tests/board.cjs tests/score-limit.cjs tests/gate.cjs tests/timed-lanes.cjs tests/infinite.cjs; do node "$t" || break; done
 ```
 
 タイムアタックの比較は `node scripts/check-balance.cjs --timed` で実行できます（90秒固定、各戦略6条件）。

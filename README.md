@@ -31,6 +31,8 @@ The interface automatically selects Japanese or English from your browser’s la
 
 - **Normal and Time Attack: a moving diverter gate** changes the flow of balls across the middle of the board. It switches sides every 10 seconds, warns 2 seconds ahead, and swings over 1.5 seconds. Follow the on-board cue: low power for left, high power for right. Pins in its swept area are removed in both modes. In Normal, lit side pockets pay the listed points and balls; dim side pockets give half points and no balls. In Time Attack, lit side pockets score double and dim side pockets score normally; the lane multiplier also applies. The central black hole always pays normally.
 
+- **Infinite cosmic effects**: Balls leave colored aurora trails that fade over 1.25 seconds and change color on planet impacts. Every 32 seconds, the central display forecasts a gravity vortex four seconds before it begins. The field curves nearby balls for eight seconds, then releases them over two seconds. Its position and spin vary between cycles. Pausing freezes the effects and forecast. Toggle glowing ball trails in the main or pause menu; the setting is shared and remembered across sessions.
+
 ### Controls
 
 | Action | Input |
@@ -58,7 +60,7 @@ Then open http://localhost:8765/.
 The rules and physics run headless in Node (no dependencies):
 
 ```bash
-for t in tests/i18n.cjs tests/modes.cjs tests/board.cjs tests/score-limit.cjs tests/gate.cjs tests/timed-lanes.cjs; do node "$t" || break; done
+for t in tests/i18n.cjs tests/modes.cjs tests/board.cjs tests/score-limit.cjs tests/gate.cjs tests/timed-lanes.cjs tests/infinite.cjs; do node "$t" || break; done
 ```
 
 Use `node scripts/check-balance.cjs --timed` for the fixed 90-second Time Attack comparison across six seeds per strategy.
