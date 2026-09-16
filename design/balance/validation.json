@@ -1,0 +1,1359 @@
+[
+  {
+    "strategy": 0.05,
+    "mean": 94200,
+    "min": 81500,
+    "max": 101000,
+    "sd": 6664,
+    "samples": [
+      {
+        "seed": 101,
+        "score": 95600,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 102,
+        "score": 101000,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 103,
+        "score": 95350,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 104,
+        "score": 81500,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 105,
+        "score": 97550,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      }
+    ]
+  },
+  {
+    "strategy": 0.1,
+    "mean": 97890,
+    "min": 91900,
+    "max": 105800,
+    "sd": 4583,
+    "samples": [
+      {
+        "seed": 101,
+        "score": 98500,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 102,
+        "score": 95400,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 103,
+        "score": 105800,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 104,
+        "score": 91900,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 105,
+        "score": 97850,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      }
+    ]
+  },
+  {
+    "strategy": 0.15,
+    "mean": 100920,
+    "min": 93250,
+    "max": 106750,
+    "sd": 5316,
+    "samples": [
+      {
+        "seed": 101,
+        "score": 96000,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 102,
+        "score": 103450,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 103,
+        "score": 106750,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 104,
+        "score": 93250,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 105,
+        "score": 105150,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      }
+    ]
+  },
+  {
+    "strategy": 0.2,
+    "mean": 87920,
+    "min": 80550,
+    "max": 98300,
+    "sd": 6844,
+    "samples": [
+      {
+        "seed": 101,
+        "score": 93200,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 102,
+        "score": 81550,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 103,
+        "score": 80550,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 104,
+        "score": 86000,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 105,
+        "score": 98300,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      }
+    ]
+  },
+  {
+    "strategy": 0.25,
+    "mean": 86030,
+    "min": 76850,
+    "max": 91500,
+    "sd": 5154,
+    "samples": [
+      {
+        "seed": 101,
+        "score": 86100,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 102,
+        "score": 90300,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 103,
+        "score": 91500,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 104,
+        "score": 76850,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 105,
+        "score": 85400,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      }
+    ]
+  },
+  {
+    "strategy": 0.3,
+    "mean": 92410,
+    "min": 77150,
+    "max": 114750,
+    "sd": 13804,
+    "samples": [
+      {
+        "seed": 101,
+        "score": 98700,
+        "multiplier": 2,
+        "first2": 76.49999999999694,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 102,
+        "score": 77150,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 103,
+        "score": 78950,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 104,
+        "score": 92500,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 105,
+        "score": 114750,
+        "multiplier": 2,
+        "first2": 47.36666666666526,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      }
+    ]
+  },
+  {
+    "strategy": 0.35,
+    "mean": 105760,
+    "min": 76850,
+    "max": 161600,
+    "sd": 29314,
+    "samples": [
+      {
+        "seed": 101,
+        "score": 103500,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 102,
+        "score": 76850,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 103,
+        "score": 97500,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 104,
+        "score": 89350,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 105,
+        "score": 161600,
+        "multiplier": 2,
+        "first2": 27.749999999999705,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      }
+    ]
+  },
+  {
+    "strategy": 0.4,
+    "mean": 87030,
+    "min": 78900,
+    "max": 99850,
+    "sd": 7273,
+    "samples": [
+      {
+        "seed": 101,
+        "score": 85300,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 102,
+        "score": 99850,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 103,
+        "score": 78900,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 104,
+        "score": 81900,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 105,
+        "score": 89200,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      }
+    ]
+  },
+  {
+    "strategy": 0.45,
+    "mean": 96770,
+    "min": 89700,
+    "max": 105600,
+    "sd": 5319,
+    "samples": [
+      {
+        "seed": 101,
+        "score": 89700,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 102,
+        "score": 105600,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 103,
+        "score": 93300,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 104,
+        "score": 97700,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 105,
+        "score": 97550,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      }
+    ]
+  },
+  {
+    "strategy": 0.5,
+    "mean": 102360,
+    "min": 98550,
+    "max": 113700,
+    "sd": 5723,
+    "samples": [
+      {
+        "seed": 101,
+        "score": 98550,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 102,
+        "score": 113700,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 103,
+        "score": 100700,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 104,
+        "score": 100000,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 105,
+        "score": 98850,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      }
+    ]
+  },
+  {
+    "strategy": 0.55,
+    "mean": 100710,
+    "min": 91250,
+    "max": 108050,
+    "sd": 6981,
+    "samples": [
+      {
+        "seed": 101,
+        "score": 93700,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 102,
+        "score": 108050,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 103,
+        "score": 91250,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 104,
+        "score": 107450,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 105,
+        "score": 103100,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      }
+    ]
+  },
+  {
+    "strategy": 0.6,
+    "mean": 88300,
+    "min": 78200,
+    "max": 103500,
+    "sd": 9340,
+    "samples": [
+      {
+        "seed": 101,
+        "score": 84200,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 102,
+        "score": 94350,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 103,
+        "score": 78200,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 104,
+        "score": 81250,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 105,
+        "score": 103500,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      }
+    ]
+  },
+  {
+    "strategy": 0.65,
+    "mean": 66300,
+    "min": 63050,
+    "max": 68700,
+    "sd": 1990,
+    "samples": [
+      {
+        "seed": 101,
+        "score": 65800,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 102,
+        "score": 68050,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 103,
+        "score": 63050,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 104,
+        "score": 68700,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 105,
+        "score": 65900,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      }
+    ]
+  },
+  {
+    "strategy": 0.7,
+    "mean": 54370,
+    "min": 46050,
+    "max": 61550,
+    "sd": 5268,
+    "samples": [
+      {
+        "seed": 101,
+        "score": 46050,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 102,
+        "score": 54050,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 103,
+        "score": 58000,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 104,
+        "score": 52200,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 105,
+        "score": 61550,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      }
+    ]
+  },
+  {
+    "strategy": 0.75,
+    "mean": 55360,
+    "min": 43700,
+    "max": 64450,
+    "sd": 8129,
+    "samples": [
+      {
+        "seed": 101,
+        "score": 64450,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 102,
+        "score": 62700,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 103,
+        "score": 48150,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 104,
+        "score": 57800,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 105,
+        "score": 43700,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      }
+    ]
+  },
+  {
+    "strategy": 0.8,
+    "mean": 51790,
+    "min": 45450,
+    "max": 61600,
+    "sd": 6518,
+    "samples": [
+      {
+        "seed": 101,
+        "score": 46400,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 102,
+        "score": 61600,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 103,
+        "score": 48000,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 104,
+        "score": 45450,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 105,
+        "score": 57500,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      }
+    ]
+  },
+  {
+    "strategy": 0.85,
+    "mean": 54920,
+    "min": 46000,
+    "max": 59300,
+    "sd": 4710,
+    "samples": [
+      {
+        "seed": 101,
+        "score": 55100,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 102,
+        "score": 59300,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 103,
+        "score": 55950,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 104,
+        "score": 46000,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 105,
+        "score": 58250,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      }
+    ]
+  },
+  {
+    "strategy": 0.9,
+    "mean": 56470,
+    "min": 45300,
+    "max": 67100,
+    "sd": 7059,
+    "samples": [
+      {
+        "seed": 101,
+        "score": 59100,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 102,
+        "score": 56500,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 103,
+        "score": 45300,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 104,
+        "score": 54350,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 105,
+        "score": 67100,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      }
+    ]
+  },
+  {
+    "strategy": 0.95,
+    "mean": 51510,
+    "min": 41250,
+    "max": 56800,
+    "sd": 5359,
+    "samples": [
+      {
+        "seed": 101,
+        "score": 52700,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 102,
+        "score": 54350,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 103,
+        "score": 41250,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 104,
+        "score": 56800,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 105,
+        "score": 52450,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      }
+    ]
+  },
+  {
+    "strategy": 1,
+    "mean": 54070,
+    "min": 48050,
+    "max": 62300,
+    "sd": 4855,
+    "samples": [
+      {
+        "seed": 101,
+        "score": 52350,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 102,
+        "score": 51500,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 103,
+        "score": 62300,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 104,
+        "score": 56150,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 105,
+        "score": 48050,
+        "multiplier": 1,
+        "first2": null,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      }
+    ]
+  },
+  {
+    "strategy": "follow",
+    "mean": 311550,
+    "min": 220700,
+    "max": 406950,
+    "sd": 67372,
+    "samples": [
+      {
+        "seed": 101,
+        "score": 271050,
+        "multiplier": 4,
+        "first2": 21.35000000000007,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 102,
+        "score": 290450,
+        "multiplier": 4,
+        "first2": 10.300000000000091,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 103,
+        "score": 368600,
+        "multiplier": 5,
+        "first2": 11.416666666666814,
+        "first5": 59.383333333331244,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 104,
+        "score": 220700,
+        "multiplier": 3,
+        "first2": 30.516666666666215,
+        "first5": null,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 105,
+        "score": 406950,
+        "multiplier": 5,
+        "first2": 10.316666666666759,
+        "first5": 69.766666666664,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      }
+    ]
+  },
+  {
+    "strategy": "build",
+    "mean": 395450,
+    "min": 327250,
+    "max": 444600,
+    "sd": 39948,
+    "samples": [
+      {
+        "seed": 101,
+        "score": 419550,
+        "multiplier": 5,
+        "first2": 12.116666666666848,
+        "first5": 70.66666666666394,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 102,
+        "score": 327250,
+        "multiplier": 5,
+        "first2": 22.89999999999998,
+        "first5": 50.699999999998404,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 103,
+        "score": 380300,
+        "multiplier": 5,
+        "first2": 9.866666666666736,
+        "first5": 69.68333333333067,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 104,
+        "score": 444600,
+        "multiplier": 5,
+        "first2": 9.916666666666739,
+        "first5": 42.016666666665564,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 105,
+        "score": 405550,
+        "multiplier": 5,
+        "first2": 12.283333333333523,
+        "first5": 56.5833333333314,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      }
+    ]
+  },
+  {
+    "strategy": "buildMax",
+    "mean": 457170,
+    "min": 420500,
+    "max": 518350,
+    "sd": 34645,
+    "samples": [
+      {
+        "seed": 101,
+        "score": 470700,
+        "multiplier": 5,
+        "first2": 12.116666666666848,
+        "first5": 29.51666666666627,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 102,
+        "score": 436250,
+        "multiplier": 5,
+        "first2": 22.89999999999998,
+        "first5": 45.69999999999869,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 103,
+        "score": 420500,
+        "multiplier": 5,
+        "first2": 9.866666666666736,
+        "first5": 34.616666666665985,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 104,
+        "score": 440050,
+        "multiplier": 5,
+        "first2": 9.916666666666739,
+        "first5": 25.799999999999816,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      },
+      {
+        "seed": 105,
+        "score": 518350,
+        "multiplier": 5,
+        "first2": 12.283333333333523,
+        "first5": 25.799999999999816,
+        "ended": "time",
+        "seconds": 90.01666666666284,
+        "kicks": 0
+      }
+    ]
+  }
+]

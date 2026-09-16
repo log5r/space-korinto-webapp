@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "space-korinto",
+  "compatibility_date": "2026-09-12",
+  "workers_dev": true,
+  "build": {
+    "command": "node scripts/prepare-deploy.cjs"
+  },
+  "assets": {
+    "directory": "./dist"
+  }
+}

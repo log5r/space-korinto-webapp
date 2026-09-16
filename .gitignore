@@ -1,0 +1,29 @@
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Claude Code
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ログ・一時ファイル
+*.log
+*.tmp
+*.swp
+*~
+
+# Node.js(将来ツールを導入した場合)
+node_modules/
+.wrangler/
+dist/
+.env
+.env.*
+
+# wrangler files
+.dev.vars*
+!.dev.vars.example
+!.env.example

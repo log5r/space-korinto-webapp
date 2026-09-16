@@ -1,0 +1,54 @@
+html, body {
+  margin: 0; height: 100%; background: #0c0e11; color: #e6e9ee;
+  font-family: -apple-system, "Hiragino Sans", "Helvetica Neue", Arial, sans-serif;
+  overflow: hidden; touch-action: none; user-select: none; -webkit-user-select: none;
+}
+#wrap { position: relative; width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center;
+        background: radial-gradient(ellipse at 50% 30%, #1d2126 0%, #0c0e11 70%); }
+canvas { display: block; box-shadow: 0 40px 90px rgba(0,0,0,.75), 0 0 0 1px rgba(255,255,255,.04); border-radius: 8px; cursor: none; }
+/* scrollable + safe centering: on short viewports the content anchors to the top instead of clipping the start button off-screen */
+.overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: safe center;
+           overflow-y: auto; box-sizing: border-box; touch-action: pan-y;
+           background: rgba(5,6,8,.74); text-align: center; padding: 24px; backdrop-filter: blur(2px); }
+.overlay > * { flex-shrink: 0; }
+.overlay h1 { font-size: 40px; margin: 0 0 8px; letter-spacing: .06em; color: #dff6ff; text-shadow: 0 0 18px rgba(143,216,255,.55), 0 2px 0 #1a2a36, 0 6px 20px rgba(0,0,0,.6); }
+.overlay p { max-width: 460px; line-height: 1.7; margin: 6px 0; font-size: 15px; color: #cfd6de; }
+/* collapsible detail rules: closed by default so the title screen stays short */
+.rules { max-width: 460px; margin: 2px 0; font-size: 14px; color: #cfd6de; }
+.rules summary { cursor: pointer; color: #8fd8ff; font-size: 13px; padding: 4px 8px; }
+.rules p { text-align: left; font-size: 14px; }
+.overlay p.controls { font-size: 13px; color: #9aa6b2; }
+.overlay .score { font-size: 54px; font-weight: 800; color: #fff; margin: 8px 0 2px; font-variant-numeric: tabular-nums; }
+.overlay .score.long { font-size: 32px; }
+.overlay .best { font-size: 14px; color: #8fa6b8; margin-bottom: 14px; }
+button { margin-top: 18px; font-size: 18px; padding: 12px 34px; border-radius: 999px; border: 2px solid #9aa3ab; cursor: pointer;
+         background: linear-gradient(#e6eaee, #9aa3ab); color: #14181c; font-weight: 700; letter-spacing: .05em;
+         box-shadow: 0 6px 18px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.85); }
+button:active { transform: translateY(2px); }
+.hidden { display: none !important; }
+.kbd { display: inline-block; padding: 1px 7px; border: 1px solid #5f6873; border-radius: 4px; font-size: 12px; background: #1a1f25; }
+/* in-game toolbar: mute at the corner, pause (shown while playing) beside it */
+#mute, #pauseBtn { position: absolute; top: 10px; margin: 0; padding: 6px 12px; font-size: 13px; opacity: .8; }
+#mute { right: 12px; }
+#pauseBtn { right: 66px; min-width: 44px; }
+/* mode picker on the title screen: two chrome toggles, the selected one lit like the HUD LEDs */
+.modes { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; justify-content: center; }
+.mode { margin: 0; padding: 8px 20px; font-size: 15px; line-height: 1.2; opacity: .55; }
+.mode small { display: block; font-size: 11px; font-weight: 600; opacity: .8; }
+.mode.selected { opacity: 1; border-color: #8fd8ff; box-shadow: 0 6px 18px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.85), 0 0 14px rgba(143,216,255,.55); }
+.row { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.overlay .row button { margin-top: 12px; padding: 12px 24px; font-size: 16px; }
+button.secondary { background: linear-gradient(#3a4148, #1e2328); color: #dfe4e8; border-color: #5f6873; }
+.overlay p.limit { color: #ffd27a; font-weight: 700; }
+.overlay .note { font-size: 12px; color: #8fa6b8; margin-top: 14px; }
+/* settings shared by the title and pause screens: flash toggle + volume slider */
+.overlay .toggle { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; font-size: 14px; color: #cfd6de; cursor: pointer; }
+.overlay .toggle input { width: 16px; height: 16px; margin: 0; accent-color: #8fd8ff; cursor: pointer; }
+.overlay .volume { display: inline-flex; align-items: center; gap: 10px; margin-top: 12px; font-size: 14px; color: #cfd6de; }
+.overlay .volume input { width: 180px; margin: 0; accent-color: #8fd8ff; cursor: pointer; }
+.overlay .volumeValue { min-width: 3.2em; text-align: right; font-variant-numeric: tabular-nums; color: #8fa6b8; }
+/* phones: leave room under the toolbar buttons and shrink the headline */
+@media (max-width: 480px) {
+  .overlay { padding: 44px 16px 24px; }
+  .overlay h1 { font-size: 28px; }
+}

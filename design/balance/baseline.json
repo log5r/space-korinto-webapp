@@ -1,0 +1,450 @@
+[
+  {
+    "variant": "baseline",
+    "strategy": 0.1,
+    "mean": 70783,
+    "min": 64250,
+    "max": 79150,
+    "samples": [
+      {
+        "seed": 1,
+        "score": 64250,
+        "multiplier": 1,
+        "sets": 0,
+        "first2": null,
+        "first5": null,
+        "hits": {
+          "small": 41,
+          "mid": 24,
+          "black": 7,
+          "lane": 1
+        }
+      },
+      {
+        "seed": 2,
+        "score": 68950,
+        "multiplier": 1,
+        "sets": 0,
+        "first2": null,
+        "first5": null,
+        "hits": {
+          "small": 49,
+          "mid": 27,
+          "black": 7
+        }
+      },
+      {
+        "seed": 3,
+        "score": 79150,
+        "multiplier": 1,
+        "sets": 0,
+        "first2": null,
+        "first5": null,
+        "hits": {
+          "mid": 23,
+          "black": 15,
+          "small": 45,
+          "lane": 1
+        }
+      }
+    ]
+  },
+  {
+    "variant": "baseline",
+    "strategy": 0.3,
+    "mean": 84117,
+    "min": 79100,
+    "max": 93250,
+    "samples": [
+      {
+        "seed": 1,
+        "score": 79100,
+        "multiplier": 1,
+        "sets": 0,
+        "first2": null,
+        "first5": null,
+        "hits": {
+          "mid": 14,
+          "small": 23,
+          "black": 13,
+          "lane": 1
+        }
+      },
+      {
+        "seed": 2,
+        "score": 93250,
+        "multiplier": 1,
+        "sets": 0,
+        "first2": null,
+        "first5": null,
+        "hits": {
+          "mid": 24,
+          "black": 14,
+          "small": 14,
+          "lane": 1
+        }
+      },
+      {
+        "seed": 3,
+        "score": 80000,
+        "multiplier": 1,
+        "sets": 0,
+        "first2": null,
+        "first5": null,
+        "hits": {
+          "mid": 28,
+          "small": 16,
+          "lane": 2,
+          "black": 6
+        }
+      }
+    ]
+  },
+  {
+    "variant": "baseline",
+    "strategy": 0.5,
+    "mean": 88283,
+    "min": 77850,
+    "max": 94950,
+    "samples": [
+      {
+        "seed": 1,
+        "score": 94950,
+        "multiplier": 1,
+        "sets": 0,
+        "first2": null,
+        "first5": null,
+        "hits": {
+          "lane": 11,
+          "mid": 26,
+          "small": 19,
+          "black": 13
+        }
+      },
+      {
+        "seed": 2,
+        "score": 92050,
+        "multiplier": 1,
+        "sets": 0,
+        "first2": null,
+        "first5": null,
+        "hits": {
+          "lane": 12,
+          "small": 18,
+          "mid": 28,
+          "black": 14
+        }
+      },
+      {
+        "seed": 3,
+        "score": 77850,
+        "multiplier": 1,
+        "sets": 0,
+        "first2": null,
+        "first5": null,
+        "hits": {
+          "mid": 15,
+          "black": 12,
+          "small": 18,
+          "lane": 7
+        }
+      }
+    ]
+  },
+  {
+    "variant": "baseline",
+    "strategy": 0.6,
+    "mean": 452883,
+    "min": 443950,
+    "max": 464400,
+    "samples": [
+      {
+        "seed": 1,
+        "score": 464400,
+        "multiplier": 5,
+        "sets": 8,
+        "first2": 13.283333333333573,
+        "first5": 63.21666666666436,
+        "hits": {
+          "lane": 126,
+          "mid": 17,
+          "black": 14,
+          "small": 7
+        }
+      },
+      {
+        "seed": 2,
+        "score": 450300,
+        "multiplier": 5,
+        "sets": 9,
+        "first2": 2.6999999999999953,
+        "first5": 30.116666666666237,
+        "hits": {
+          "lane": 121,
+          "mid": 14,
+          "small": 12,
+          "black": 13
+        }
+      },
+      {
+        "seed": 3,
+        "score": 443950,
+        "multiplier": 5,
+        "sets": 9,
+        "first2": 9.850000000000069,
+        "first5": 43.299999999998825,
+        "hits": {
+          "lane": 127,
+          "small": 8,
+          "mid": 20,
+          "black": 12
+        }
+      }
+    ]
+  },
+  {
+    "variant": "baseline",
+    "strategy": 0.7,
+    "mean": 75567,
+    "min": 65800,
+    "max": 81300,
+    "samples": [
+      {
+        "seed": 1,
+        "score": 81300,
+        "multiplier": 1,
+        "sets": 0,
+        "first2": null,
+        "first5": null,
+        "hits": {
+          "black": 18,
+          "small": 23,
+          "mid": 21,
+          "lane": 4
+        }
+      },
+      {
+        "seed": 2,
+        "score": 79600,
+        "multiplier": 1,
+        "sets": 0,
+        "first2": null,
+        "first5": null,
+        "hits": {
+          "small": 18,
+          "mid": 22,
+          "black": 17
+        }
+      },
+      {
+        "seed": 3,
+        "score": 65800,
+        "multiplier": 1,
+        "sets": 0,
+        "first2": null,
+        "first5": null,
+        "hits": {
+          "small": 18,
+          "mid": 21,
+          "lane": 1,
+          "black": 10
+        }
+      }
+    ]
+  },
+  {
+    "variant": "baseline",
+    "strategy": 0.8,
+    "mean": 53283,
+    "min": 45800,
+    "max": 59350,
+    "samples": [
+      {
+        "seed": 1,
+        "score": 45800,
+        "multiplier": 1,
+        "sets": 0,
+        "first2": null,
+        "first5": null,
+        "hits": {
+          "small": 21,
+          "mid": 16,
+          "black": 13
+        }
+      },
+      {
+        "seed": 2,
+        "score": 54700,
+        "multiplier": 1,
+        "sets": 0,
+        "first2": null,
+        "first5": null,
+        "hits": {
+          "small": 21,
+          "black": 16,
+          "mid": 19
+        }
+      },
+      {
+        "seed": 3,
+        "score": 59350,
+        "multiplier": 1,
+        "sets": 0,
+        "first2": null,
+        "first5": null,
+        "hits": {
+          "black": 20,
+          "small": 26,
+          "mid": 14
+        }
+      }
+    ]
+  },
+  {
+    "variant": "baseline",
+    "strategy": 0.95,
+    "mean": 56117,
+    "min": 52750,
+    "max": 57850,
+    "samples": [
+      {
+        "seed": 1,
+        "score": 57850,
+        "multiplier": 1,
+        "sets": 0,
+        "first2": null,
+        "first5": null,
+        "hits": {
+          "mid": 21,
+          "small": 25,
+          "black": 15
+        }
+      },
+      {
+        "seed": 2,
+        "score": 57750,
+        "multiplier": 1,
+        "sets": 0,
+        "first2": null,
+        "first5": null,
+        "hits": {
+          "small": 22,
+          "black": 10,
+          "mid": 23
+        }
+      },
+      {
+        "seed": 3,
+        "score": 52750,
+        "multiplier": 1,
+        "sets": 0,
+        "first2": null,
+        "first5": null,
+        "hits": {
+          "small": 31,
+          "mid": 21,
+          "black": 13
+        }
+      }
+    ]
+  },
+  {
+    "variant": "baseline",
+    "strategy": "follow",
+    "mean": 71983,
+    "min": 65700,
+    "max": 75400,
+    "samples": [
+      {
+        "seed": 1,
+        "score": 75400,
+        "multiplier": 1,
+        "sets": 0,
+        "first2": null,
+        "first5": null,
+        "hits": {
+          "small": 42,
+          "mid": 26,
+          "black": 9
+        }
+      },
+      {
+        "seed": 2,
+        "score": 65700,
+        "multiplier": 1,
+        "sets": 0,
+        "first2": null,
+        "first5": null,
+        "hits": {
+          "small": 30,
+          "mid": 31,
+          "black": 5
+        }
+      },
+      {
+        "seed": 3,
+        "score": 74850,
+        "multiplier": 1,
+        "sets": 0,
+        "first2": null,
+        "first5": null,
+        "hits": {
+          "mid": 30,
+          "black": 14,
+          "small": 33
+        }
+      }
+    ]
+  },
+  {
+    "variant": "baseline",
+    "strategy": "build",
+    "mean": 203050,
+    "min": 162950,
+    "max": 240150,
+    "samples": [
+      {
+        "seed": 1,
+        "score": 162950,
+        "multiplier": 3,
+        "sets": 2,
+        "first2": 30.083333333332906,
+        "first5": null,
+        "hits": {
+          "lane": 28,
+          "mid": 24,
+          "black": 8,
+          "small": 25
+        }
+      },
+      {
+        "seed": 2,
+        "score": 240150,
+        "multiplier": 3,
+        "sets": 2,
+        "first2": 6.799999999999981,
+        "first5": null,
+        "hits": {
+          "mid": 25,
+          "lane": 13,
+          "black": 15,
+          "small": 30
+        }
+      },
+      {
+        "seed": 3,
+        "score": 206050,
+        "multiplier": 3,
+        "sets": 2,
+        "first2": 8.45,
+        "first5": null,
+        "hits": {
+          "lane": 11,
+          "small": 35,
+          "mid": 26,
+          "black": 8
+        }
+      }
+    ]
+  }
+]
