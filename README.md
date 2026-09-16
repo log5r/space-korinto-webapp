@@ -13,7 +13,7 @@ The interface automatically selects Japanese or English from your browser’s la
   - **Normal**: you start with **30 balls**. Every shot costs one; wormholes pay balls back. The run ends when the stock is empty and the last ball has left the board.
   - **Time Attack**: unlimited balls, **90 seconds**. The clock is fixed, with no time extensions.
   - **Infinite mode**: unlimited balls, no clock (the TIME plate shows elapsed time). Use "Finish & save score" on the pause screen to go to the results screen.
-- The only control is the **blue-lit handle gauge** on the bottom rail. While the handle is turned, balls fire automatically at 100 a minute; push it all the way left (STOP) to hold fire. Weak shots drop off the top arc on the left, strong shots carry over to the right.
+- The only control is the **blue-lit handle gauge** on the bottom rail. While the handle is turned, balls fire automatically at 100 a minute in Normal and 200 a minute in Time Attack and Infinite; push it all the way left (STOP) to hold fire. Weak shots drop off the top arc on the left, strong shots carry over to the right.
 - Scoring (all of it scaled by the multiplier):
   | Target | Points | Payout (Normal) |
   | --- | --- | --- |

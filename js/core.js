@@ -19,7 +19,8 @@ const MAX_SPEED = 2100;
 // launch strength maps linearly onto this band; the low end drops the ball off the arc early (left side),
 // the high end carries it all the way over to the right
 const LAUNCH_MIN = 1400, LAUNCH_MAX = 1700;
-const LAUNCH_INTERVAL = 0.6;       // 100 balls a minute
+const LAUNCH_INTERVAL = 0.6;       // Normal mode and attract demo: 100 balls a minute
+const UNLIMITED_LAUNCH_INTERVAL = 0.3; // Time Attack and Infinite: 200 balls a minute
 const HANDLE_DEAD = 0.04;          // gauge below this = handle released, nothing fires
 const TIME_LIMIT = 90;             // seconds in the timed mode
 const START_BALLS = 30;            // normal-mode stock
@@ -52,7 +53,7 @@ const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
 const rand = (a, b) => a + Math.random() * (b - a);
 const lerp = (a, b, t) => a + (b - a) * t;
 
-return { W, H, HUD_H, WALL, L, Rgt, T, B, R, PIN_R, LANE_W, FIELD_L, CX, ARC_CX, ARC_CY, ARC_R, GRAVITY, MAX_SPEED, LAUNCH_MIN, LAUNCH_MAX, LAUNCH_INTERVAL, HANDLE_DEAD,
+return { W, H, HUD_H, WALL, L, Rgt, T, B, R, PIN_R, LANE_W, FIELD_L, CX, ARC_CX, ARC_CY, ARC_R, GRAVITY, MAX_SPEED, LAUNCH_MIN, LAUNCH_MAX, LAUNCH_INTERVAL, UNLIMITED_LAUNCH_INTERVAL, HANDLE_DEAD,
          TIME_LIMIT, START_BALLS, MAX_BALLS_IN_PLAY, HOLES, BUMPER_POINTS, BUMPER_KICK, SLING_POINTS, SLING_KICK, STAR_POINTS,
          LANE_POINTS, LANE_REPEAT_POINTS, LANES_BONUS, MAX_MULTIPLIER, FLIPPER_LEN, FLIPPER_SPEED, FLIPPER_HOLD, FLIPPER_COOLDOWN, SCORE_MAX, SCORE_LIMIT_RETURN, holeReward, timedGateGrace, clamp, rand, lerp };
 })();

@@ -2,7 +2,7 @@
 (() => {
 'use strict';
 
-const { W, H, L, Rgt, T, B, R, FIELD_L, LANE_W, CX, ARC_CX, ARC_CY, ARC_R, GRAVITY, MAX_SPEED, LAUNCH_MIN, LAUNCH_MAX, LAUNCH_INTERVAL, HANDLE_DEAD,
+const { W, H, L, Rgt, T, B, R, FIELD_L, LANE_W, CX, ARC_CX, ARC_CY, ARC_R, GRAVITY, MAX_SPEED, LAUNCH_MIN, LAUNCH_MAX, LAUNCH_INTERVAL, UNLIMITED_LAUNCH_INTERVAL, HANDLE_DEAD,
         TIME_LIMIT, START_BALLS, MAX_BALLS_IN_PLAY, HOLES, BUMPER_POINTS, BUMPER_KICK, SLING_POINTS, SLING_KICK, STAR_POINTS,
         LANE_POINTS, LANE_REPEAT_POINTS, LANES_BONUS, MAX_MULTIPLIER, FLIPPER_SPEED, FLIPPER_HOLD, FLIPPER_COOLDOWN, SCORE_MAX, SCORE_LIMIT_RETURN, clamp, rand, lerp } = window.SpaceKorinto;
 const { t, labelButton } = window.SpaceKorinto.i18n;
@@ -518,11 +518,12 @@ function update(dt) {
       if (state.time <= 0) { state.time = 0; endGame('time'); return; }
     }
   }
-  // launching: 100 balls a minute while the handle is turned and there is stock to fire
+  // Unlimited-stock modes fire twice as often; the attract demo keeps the normal rate.
+  const launchInterval = state.mode === 'playing' && infiniteBalls() ? UNLIMITED_LAUNCH_INTERVAL : LAUNCH_INTERVAL;
   state.launchT += dt;
   const canFire = state.handle >= HANDLE_DEAD && state.balls.length < MAX_BALLS_IN_PLAY && (state.mode !== 'playing' || infiniteBalls() || state.stock > 0);
-  if (canFire && state.launchT >= LAUNCH_INTERVAL) { state.launchT = 0; launch(); }
-  else if (!canFire) state.launchT = Math.min(state.launchT, LAUNCH_INTERVAL);
+  if (canFire && state.launchT >= launchInterval) { state.launchT = 0; launch(); }
+  else if (!canFire) state.launchT = Math.min(state.launchT, launchInterval);
 
   updateVortex();
   updateFeatures(dt);

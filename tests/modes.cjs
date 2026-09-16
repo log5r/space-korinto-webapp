@@ -84,10 +84,17 @@ assert.equal(state.score - s1, HOLES.black.points * 2, 'the multiplier applies t
 for (let i = 0; i < 10; i++) for (const l of board.lanes) game.onLane(null, l);
 assert.equal(state.multiplier, consts.MAX_MULTIPLIER, 'the multiplier is capped');
 
-// --- the handle dead zone: below it nothing fires, above it the rate is 100 balls a minute
-click('pauseBtn'); click('quitBtn'); click('startBtn');
-run(6, HANDLE_DEAD / 2);
-assert.equal(state.shots, 0);
-run(6, 1);
-assert.equal(state.shots, 10);
-console.log('Mode checks passed: normal stock & ball-out, fixed timed clock & black hole score, infinite finish/quit, lanes & multiplier, handle dead zone.');
+// --- firing rates and handle stop/resume across all modes
+for (const [button, expectedShots] of [['modeNormal', 10], ['modeTimed', 20], ['modeInfinite', 20]]) {
+  click('pauseBtn'); click('quitBtn'); click(button); click('startBtn');
+  run(6, HANDLE_DEAD / 2);
+  assert.equal(state.shots, 0, `${state.modeId}: the dead zone stops firing`);
+  run(6, 1);
+  assert.equal(state.shots, expectedShots, `${state.modeId}: shots in six seconds`);
+  run(2, 0);
+  assert.equal(state.shots, expectedShots, `${state.modeId}: releasing the handle stops firing`);
+  run(1 / 60, 1);
+  assert.equal(state.shots, expectedShots + 1, `${state.modeId}: resuming fires one ball immediately`);
+  assert.ok(state.balls.length <= MAX_BALLS_IN_PLAY);
+}
+console.log('Mode checks passed: normal stock & ball-out, fixed timed clock & black hole score, infinite finish/quit, lanes & multiplier, mode firing rates & handle dead zone.');
