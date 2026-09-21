@@ -6,7 +6,7 @@
 <title>Space Korinto</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600&family=JetBrains+Mono:wght@800&display=swap">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=mode-ui-1">
 </head>
 <body>
 <div id="wrap">
@@ -23,10 +23,13 @@
       <p data-i18n="flippers">下の<b>フリッパーは自動</b>で動きます。落ちてきた玉を打ち上げてもう一度ワームホールを狙えますが、フリッパーの間や外側のレーンに落ちた玉はアウトです。</p>
     </details>
     <p class="controls" data-i18n="controls"><span class="kbd">マウス / タッチ</span> <span class="kbd">← →</span> でハンドル操作 &nbsp; <span class="kbd">P</span> / <span class="kbd">Esc</span> ポーズ &nbsp; <span class="kbd">M</span> ミュート</p>
-    <div class="modes">
-      <button id="modeNormal" class="mode selected" data-i18n="modeNormal">ノーマル<small>持ち玉 30 個</small></button>
-      <button id="modeTimed" class="mode" data-i18n="modeTimed">タイムアタック<small>90 秒・玉無限</small></button>
-      <button id="modeInfinite" class="mode" data-i18n="modeInfinite">無限モード<small>制限なし</small></button>
+    <div class="modePicker">
+    <div class="modeLabel" id="modeLabel" data-i18n="modeLabel">ゲームモード</div>
+    <div class="modes" role="radiogroup" aria-labelledby="modeLabel">
+      <button id="modeNormal" type="button" role="radio" aria-checked="true" class="mode selected" data-i18n="modeNormal">ノーマル<small>持ち玉 30 個</small></button>
+      <button id="modeTimed" type="button" role="radio" aria-checked="false" class="mode" data-i18n="modeTimed">タイムアタック<small>90 秒・玉無限</small></button>
+      <button id="modeInfinite" type="button" role="radio" aria-checked="false" class="mode" data-i18n="modeInfinite">無限モード<small>制限なし</small></button>
+    </div>
     </div>
     <label class="toggle"><input type="checkbox" class="flashToggle" checked> <span data-i18n="flash">フラッシュエフェクト（入賞時の画面の光）</span></label>
     <label class="toggle"><input type="checkbox" class="auroraToggle" checked> <span data-i18n="aurora">ボールの光の軌跡（無限モード）</span></label>
@@ -61,10 +64,10 @@
 </div>
 
 <script src="js/core.js?v=mode-fire-2"></script>
-<script src="js/i18n.js?v=mode-fire-2"></script>
+<script src="js/i18n.js?v=mode-ui-1"></script>
 <script src="js/audio.js"></script>
 <script src="js/board.js?v=timed-lanes-1"></script>
 <script src="js/renderer.js?v=timed-lanes-1"></script>
-<script src="js/game.js?v=mode-fire-2"></script>
+<script src="js/game.js?v=mode-ui-1"></script>
 </body>
 </html>

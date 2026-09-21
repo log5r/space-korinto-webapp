@@ -21,24 +21,56 @@ canvas { display: block; box-shadow: 0 40px 90px rgba(0,0,0,.75), 0 0 0 1px rgba
 .overlay .score { font-size: 54px; font-weight: 800; color: #fff; margin: 8px 0 2px; font-variant-numeric: tabular-nums; }
 .overlay .score.long { font-size: 32px; }
 .overlay .best { font-size: 14px; color: #8fa6b8; margin-bottom: 14px; }
-button { margin-top: 18px; font-size: 18px; padding: 12px 34px; border-radius: 999px; border: 2px solid #9aa3ab; cursor: pointer;
-         background: linear-gradient(#e6eaee, #9aa3ab); color: #14181c; font-weight: 700; letter-spacing: .05em;
-         box-shadow: 0 6px 18px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.85); }
-button:active { transform: translateY(2px); }
+/* buttons: the primary action is a cyan→violet gradient pill (the wormhole colours) with a soft glow; secondaries are dark outlines */
+button { margin-top: 18px; font-family: "Chakra Petch", -apple-system, "Hiragino Sans", sans-serif; font-size: 17px; font-weight: 600;
+         letter-spacing: .12em; text-transform: uppercase; padding: 13px 42px; border-radius: 999px; cursor: pointer;
+         border: 1px solid rgba(255,255,255,.35); color: #07111a;
+         background: linear-gradient(100deg, #5fe3ff 0%, #7aa7ff 55%, #b48cff 100%);
+         box-shadow: 0 8px 24px rgba(0,0,0,.55), 0 0 22px rgba(122,167,255,.4), inset 0 1px 0 rgba(255,255,255,.6);
+         transition: transform .12s, box-shadow .15s, filter .15s; }
+button:hover { filter: brightness(1.08); transform: translateY(-1px);
+               box-shadow: 0 10px 28px rgba(0,0,0,.55), 0 0 32px rgba(122,167,255,.6), inset 0 1px 0 rgba(255,255,255,.7); }
+button:active { transform: translateY(1px); filter: brightness(.95); box-shadow: 0 4px 12px rgba(0,0,0,.5), 0 0 16px rgba(122,167,255,.35); }
+button:focus-visible { outline: 2px solid #dff6ff; outline-offset: 3px; }
 .hidden { display: none !important; }
 .kbd { display: inline-block; padding: 1px 7px; border: 1px solid #5f6873; border-radius: 4px; font-size: 12px; background: #1a1f25; }
 /* in-game toolbar: mute at the corner, pause (shown while playing) beside it */
-#mute, #pauseBtn { position: absolute; top: 10px; margin: 0; padding: 6px 12px; font-size: 13px; opacity: .8; }
+#mute, #pauseBtn { position: absolute; top: 10px; margin: 0; padding: 6px 12px; font-size: 13px; letter-spacing: 0;
+                   color: #dff6ff; background: rgba(12,16,20,.78); border-color: rgba(255,255,255,.2); box-shadow: none;
+                   backdrop-filter: blur(6px); filter: none; }
+#mute:hover, #pauseBtn:hover { filter: none; transform: none; border-color: rgba(143,216,255,.6); box-shadow: 0 0 12px rgba(143,216,255,.25); }
 #mute { right: 12px; }
 #pauseBtn { right: 66px; min-width: 44px; }
-/* mode picker on the title screen: two chrome toggles, the selected one lit like the HUD LEDs */
-.modes { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; justify-content: center; }
-.mode { margin: 0; padding: 8px 20px; font-size: 15px; line-height: 1.2; opacity: .55; }
-.mode small { display: block; font-size: 11px; font-weight: 600; opacity: .8; }
-.mode.selected { opacity: 1; border-color: #8fd8ff; box-shadow: 0 6px 18px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.85), 0 0 14px rgba(143,216,255,.55); }
+/* mode picker on the title screen: a captioned segmented control, deliberately flat so only the start button reads as "press me" */
+.modePicker { display: inline-flex; flex-direction: column; align-items: center; margin-top: 18px; }
+.modeLabel { font-family: "Chakra Petch", -apple-system, "Hiragino Sans", sans-serif; font-size: 11px; font-weight: 600;
+             letter-spacing: .22em; text-transform: uppercase; color: #8fd8ff; margin-bottom: 6px; }
+.modes { display: inline-flex; padding: 4px; border-radius: 12px;
+         background: #12161b; border: 1px solid #3a4550; box-shadow: inset 0 2px 6px rgba(0,0,0,.6); }
+.mode { margin: 0; padding: 7px 18px; font-size: 14px; line-height: 1.2; border-radius: 9px; border: 0; box-shadow: none;
+        font-family: inherit; letter-spacing: .02em; text-transform: none; filter: none;
+        background: transparent; color: #a9b8c6; font-weight: 700; transition: background .15s, color .15s, box-shadow .15s; }
+.mode + .mode { border-left: 1px solid #3a4550; border-radius: 0 9px 9px 0; }
+.mode:first-child { border-radius: 9px 0 0 9px; }
+.mode.selected, .mode.selected + .mode { border-left-color: transparent; }
+.mode:hover { color: #e6e9ee; background: rgba(255,255,255,.05); transform: none; filter: none; box-shadow: none; }
+.mode:active { transform: none; filter: none; box-shadow: none; }
+.mode small { display: block; font-size: 11px; font-weight: 600; opacity: .75; }
+.mode.selected, .mode.selected:hover { color: #dff6ff; background: rgba(143,216,255,.16); border-radius: 9px;
+                 box-shadow: inset 0 0 0 1px rgba(143,216,255,.6), 0 0 14px rgba(143,216,255,.25); }
+.mode.selected small { opacity: .85; }
+@media (max-width: 480px) {
+  .modePicker, .modes { align-self: stretch; }
+  .modes { flex-direction: column; }
+  .mode { padding: 9px 12px; border-radius: 9px; }
+  .mode + .mode { border-left: 0; border-top: 1px solid #3a4550; border-radius: 9px; }
+  .mode.selected, .mode.selected + .mode { border-top-color: transparent; }
+}
 .row { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
 .overlay .row button { margin-top: 12px; padding: 12px 24px; font-size: 16px; }
-button.secondary { background: linear-gradient(#3a4148, #1e2328); color: #dfe4e8; border-color: #5f6873; }
+button.secondary { background: rgba(16,21,27,.85); color: #dff6ff; border-color: rgba(143,216,255,.45);
+                   box-shadow: 0 6px 18px rgba(0,0,0,.45), inset 0 0 0 1px rgba(143,216,255,.12); }
+button.secondary:hover { filter: none; border-color: rgba(143,216,255,.85); box-shadow: 0 8px 22px rgba(0,0,0,.45), 0 0 16px rgba(143,216,255,.3); }
 .overlay p.limit { color: #ffd27a; font-weight: 700; }
 .overlay .note { font-size: 12px; color: #8fa6b8; margin-top: 14px; }
 /* settings shared by the title and pause screens: flash toggle + volume slider */

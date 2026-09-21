@@ -125,7 +125,10 @@ function selectMode(id, persist = true) {
   state.modeId = id; state.best = loadBest(id);
   configureBoard();
   if (persist) localStorage.setItem('korinto_mode', id);
-  for (const m of MODES) document.getElementById('mode' + m[0].toUpperCase() + m.slice(1)).classList[m === id ? 'add' : 'remove']('selected');
+  for (const m of MODES) {
+    const el = document.getElementById('mode' + m[0].toUpperCase() + m.slice(1));
+    el.classList[m === id ? 'add' : 'remove']('selected'); el.setAttribute('aria-checked', String(m === id));
+  }
 }
 function fmtTime(sec) {
   const s = Math.floor(sec), m = Math.floor(s / 60) % 60, h = Math.floor(s / 3600), pad = n => String(n).padStart(2, '0');
